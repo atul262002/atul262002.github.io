@@ -73,7 +73,7 @@
         .hero-description {
             font-size: 1rem;
             color: #cbd5e1;
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto 2rem;
             line-height: 1.7;
         }
@@ -81,7 +81,8 @@
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
@@ -144,11 +145,17 @@
             border-left: 3px solid #667eea;
         }
 
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .job-title {
@@ -173,7 +180,7 @@
             font-size: 1rem;
             font-weight: 600;
             color: #a78bfa;
-            margin: 1rem 0 0.5rem;
+            margin: 1.25rem 0 0.5rem;
         }
 
         .achievement {
@@ -234,16 +241,50 @@
             transition: all 0.3s ease;
         }
 
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
         .project-item:hover {
             border-color: #667eea;
             transform: translateY(-3px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 0.25rem;
         }
 
         .project-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: #f1f5f9;
-            margin-bottom: 0.5rem;
+        }
+
+        .project-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .badge-live {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.35);
+        }
+
+        .badge-personal {
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.35);
         }
 
         .project-subtitle {
@@ -261,10 +302,27 @@
             gap: 0.5rem;
             margin-bottom: 1rem;
             transition: color 0.3s ease;
+            word-break: break-all;
         }
 
         .project-link:hover {
             color: #a78bfa;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: rgba(255, 255, 255, 0.06);
+            color: #94a3b8;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .education-item {
@@ -430,7 +488,7 @@
 </head>
 <body>
     <div class="floating-bg"></div>
-    
+
     <div class="container">
         <!-- Hero Section -->
         <section class="hero-section">
@@ -438,7 +496,10 @@
             <h1 class="hero-title">Atul Kumar</h1>
             <p class="hero-subtitle">Research Associate & Software Engineer</p>
             <p class="hero-description">
-                Passionate about AI-powered healthcare solutions and full-stack development. Currently building cutting-edge diagnostic tools at IIT Delhi and crafting scalable software solutions that make a real-world impact.
+                Passionate about AI-powered healthcare solutions and full-stack development. Currently building
+                cutting-edge diagnostic tools at IIT Delhi's Vision and Healthcare Lab, and shipping production
+                websites and platforms — from drone robotics and aerial analytics to nutrition marketplaces and
+                Gemini-powered support systems — for clients across industries.
             </p>
             <div class="contact-links">
                 <a href="mailto:writeatul2002@gmail.com" class="contact-link">
@@ -453,9 +514,9 @@
                     <i class="fab fa-linkedin"></i>
                     LinkedIn
                 </a>
-                <a href="tel:+91-8700094836" class="contact-link">
+                <a href="tel:+918054948366" class="contact-link">
                     <i class="fas fa-phone"></i>
-                    +91-8700094836
+                    +91-8054948366
                 </a>
             </div>
         </section>
@@ -463,48 +524,58 @@
         <!-- Experience Section -->
         <section class="section">
             <h2 class="section-title">Experience</h2>
-            
+
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="job-title">Research Associate</div>
-                        <div class="company-name">IIT Delhi</div>
+                        <div class="job-title">Software Developer</div>
+                        <div class="company-name">IIT Delhi — Vision and Healthcare Lab</div>
                     </div>
                     <div class="duration">November 2024 – Present</div>
                 </div>
-                
-                <div class="project-name">🏥 Swasth Project</div>
-                <div class="achievement">Led development of AI radiology platform for early detection of breast and gall bladder cancer</div>
-                <div class="achievement">Implemented real-time ML inference using PyTorch and TensorRT with JWT-based authentication</div>
-                <div class="achievement">Deployed optimized models on NVIDIA Jetson devices for offline diagnostics</div>
-                <div class="achievement">Engineered end-to-end pipelines for Ultrasound, X-ray, and Mammography processing</div>
-                <div class="achievement">Successfully deployed across PGIMER Chandigarh and AIIMS Delhi</div>
-                <div class="achievement">Achieved 800+ diagnostic cases per month, reducing manual review time significantly</div>
-                
-                <div class="project-name">📄 Lipikar Project</div>
-                <div class="achievement">Developed comprehensive OCR system for 22 Indian languages</div>
-                <div class="achievement">Integrated 28 PyTorch ML models with Triton Inference Server</div>
-                <div class="achievement">Built scalable REST APIs using Django backend and React frontend</div>
-                <div class="achievement">Implemented Celery task queues with Redis for live status updates</div>
-                <div class="achievement">Maintained 99% uptime with containerized deployment</div>
-                <div class="achievement">Actively used by Rekhta.org and Tata 1mg for document processing automation</div>
+
+                <div class="project-name">🏥 Swasth — AI-Assisted Screening & Treatment Platform</div>
+                <a href="https://aih.cse.iitd.ac.in/" class="project-link" target="_blank" rel="noopener" style="margin-bottom: 0.75rem;">
+                    <i class="fas fa-external-link-alt"></i>
+                    aih.cse.iitd.ac.in
+                </a>
+                <div class="achievement">Currently under maintenance</div>
+                <div class="achievement">Led development of IIT Delhi's AI radiology platform for early detection of breast and gall bladder cancer</div>
+                <div class="achievement">Implemented real-time ML inference with PyTorch and TensorRT, plus secure DICOM Web integration and JWT-based authentication</div>
+                <div class="achievement">Deployed optimized models on edge devices (NVIDIA Jetson Orin & Nano) for offline diagnostics, integrated with cloud infrastructure for scalable serving</div>
+                <div class="achievement">Engineered end-to-end pipelines for Ultrasound, X-ray, and Mammography processing with real-time visualization of AI results</div>
+                <div class="achievement">Deployed across 2 major hospitals — AIIMS Delhi and PGIMER Chandigarh — positively impacting diagnostic workflows</div>
+                <div class="achievement">Achieved throughput of 800+ diagnostic cases per month, reducing manual review time and enhancing decision-making</div>
+
+                <div class="project-name">📄 Lipikar — Multilingual OCR System</div>
+                <a href="https://lipikar.cse.iitd.ac.in/" class="project-link" target="_blank" rel="noopener" style="margin-bottom: 0.75rem;">
+                    <i class="fas fa-external-link-alt"></i>
+                    lipikar.cse.iitd.ac.in
+                </a>
+                <div class="achievement">Designed, developed, and deployed an OCR system integrating 28 PyTorch ML models for text recognition across 22 Indian languages</div>
+                <div class="achievement">Leveraged Triton Inference Server on cloud infrastructure for scalable, efficient inference pipelines</div>
+                <div class="achievement">Built and deployed scalable REST APIs using a Django backend and React frontend</div>
+                <div class="achievement">Used Celery for task queue management and Redis for live task status updates</div>
+                <div class="achievement">Maintained 99% uptime with containerized deployment for production availability</div>
+                <div class="achievement">Actively used by Tata 1mg and Rekhta.org to automate their document processing workflows</div>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="job-title">Software Engineer</div>
+                        <div class="job-title">Software Engineer (Full-Time + Internship)</div>
                         <div class="company-name">Zecotok</div>
                     </div>
                     <div class="duration">December 2023 – October 2024</div>
                 </div>
-                <div class="achievement">Resolved 30+ Jira tickets by debugging and implementing efficient IoT solutions</div>
-                <div class="achievement">Developed backend services using Node.js and Azure Functions with RESTful APIs</div>
+                <div class="achievement">Worked on an IoT project, resolving 30+ Jira tickets by debugging and implementing efficient solutions</div>
+                <div class="achievement">Developed and deployed backend services using Node.js and Azure Functions, including cron jobs and RESTful APIs</div>
                 <div class="achievement">Managed high-frequency device data with InfluxDB, PostgreSQL, and FlowFuse</div>
-                <div class="achievement">Improved system responsiveness by 60% through real-time data architecture</div>
-                <div class="achievement">Implemented log analytics system monitoring 5K+ requests/day across 5+ services</div>
-                <div class="achievement">Cut issue response time by 40% with automated email alerts</div>
-                <div class="achievement">Configured SMTP mail server on EC2 with AWS SES for secure communication</div>
+                <div class="achievement">Integrated the Freshdesk API and automated data migration using cron jobs</div>
+                <div class="achievement">Built a real-time log analytics system monitoring API success rates (5K+ requests/day) and CPU load across 5+ services</div>
+                <div class="achievement">Triggered automated email alerts, cutting issue response time by 40%, and visualized Azure logs in Grafana using KQL queries</div>
+                <div class="achievement">Implemented real-time data architecture to display live device results, improving system responsiveness and visibility by 60%</div>
+                <div class="achievement">Set up and configured an SMTP mail server on an EC2 instance using AWS SES for reliable, secure internal email communication</div>
             </div>
         </section>
 
@@ -515,8 +586,9 @@
                 <div class="skill-category">
                     <h3>Languages</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">C++</span>
                     </div>
                 </div>
@@ -524,6 +596,7 @@
                     <h3>Frameworks</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Flask</span>
                         <span class="skill-tag">React.js</span>
                         <span class="skill-tag">Next.js</span>
                         <span class="skill-tag">Node.js</span>
@@ -536,6 +609,7 @@
                         <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">TensorRT</span>
                         <span class="skill-tag">Triton Inference Server</span>
+                        <span class="skill-tag">Gemini API</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -554,6 +628,7 @@
                         <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">InfluxDB</span>
                         <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Microservices</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -561,6 +636,7 @@
                     <div class="skill-tags">
                         <span class="skill-tag">AWS</span>
                         <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">GCP</span>
                         <span class="skill-tag">Custom Cloud Infrastructure</span>
                     </div>
                 </div>
@@ -570,25 +646,134 @@
         <!-- Projects Section -->
         <section class="section">
             <h2 class="section-title">Notable Projects</h2>
-            
+
             <div class="project-item">
-                <h3 class="project-title">SnipShare</h3>
-                <p class="project-subtitle">Share Ideas, Code, and Messages Seamlessly</p>
-                <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i>
-                    View Project
-                </a>
-                <p class="achievement">Built full-stack web application for instantly sharing code snippets and messages via unique URLs</p>
-                <p class="achievement">Implemented using Node.js, Express.js, MongoDB, and EJS with syntax highlighting</p>
-                <p class="achievement">Features reusable templates and account management for enhanced user experience</p>
+                <div class="project-header">
+                    <h3 class="project-title">Vault</h3>
+                    <span class="project-badge badge-personal">Personal Project</span>
+                </div>
+                <p class="project-subtitle">Secure escrow payments marketplace</p>
+                <p class="achievement">Built a secure escrow-based marketplace enabling safe buyer–seller transactions</p>
+                <p class="achievement">Integrated the Razorpay API for payment processing and escrow handling with controlled fund release</p>
+                <p class="achievement">Implemented product listings, order management, real-time chat, and automated email notifications</p>
+                <p class="achievement">Developed using Next.js (frontend) and Node.js (backend) with WebSocket integration, Clerk authentication, and Prisma ORM</p>
+                <div class="project-tags">
+                    <span class="project-tag">Escrow</span>
+                    <span class="project-tag">Razorpay</span>
+                    <span class="project-tag">Prisma</span>
+                    <span class="project-tag">Clerk Auth</span>
+                </div>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">Realtime Chat Application</h3>
+                <div class="project-header">
+                    <h3 class="project-title">Bcache</h3>
+                    <span class="project-badge badge-live">Live</span>
+                </div>
+                <p class="project-subtitle">Video archival platform</p>
+                <a href="https://www.bcache.cash/" class="project-link" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    bcache.cash
+                </a>
+                <p class="achievement">Developed a video archiving platform for reliably storing, organizing, and retrieving video content at scale</p>
+                <p class="achievement">Focused on efficient storage handling and a clean interface for managing large archives</p>
+                <div class="project-tags">
+                    <span class="project-tag">Video Storage</span>
+                    <span class="project-tag">Full-Stack</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Hypersphere</h3>
+                    <span class="project-badge badge-live">Live</span>
+                </div>
+                <p class="project-subtitle">Corporate website for a drone robotics company</p>
+                <a href="https://hypersphere.io/" class="project-link" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    hypersphere.io
+                </a>
+                <p class="achievement">Designed and built the marketing and product website for Hypersphere, showcasing their drone robotics platform and capabilities to enterprise clients</p>
+                <p class="achievement">Focused on a fast, responsive, brand-forward experience that communicates deep-tech credibility</p>
+                <div class="project-tags">
+                    <span class="project-tag">Robotics</span>
+                    <span class="project-tag">Corporate Site</span>
+                    <span class="project-tag">Next.js</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Kanchan Drones</h3>
+                    <span class="project-badge badge-live">Live</span>
+                </div>
+                <p class="project-subtitle">Website for an aerial analytics & survey company</p>
+                <a href="https://www.kanchandrones.com/" class="project-link" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    kanchandrones.com
+                </a>
+                <p class="achievement">Built the web presence for an aerial analytics company offering drone-based surveying, mapping, and inspection services</p>
+                <p class="achievement">Structured service and case-study pages to clearly present technical offerings to industrial and government clients</p>
+                <div class="project-tags">
+                    <span class="project-tag">Aerial Analytics</span>
+                    <span class="project-tag">Survey Tech</span>
+                    <span class="project-tag">Corporate Site</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Balanced Nutrition</h3>
+                    <span class="project-badge badge-live">Live</span>
+                </div>
+                <p class="project-subtitle">Platform connecting nutritionists with customers</p>
+                <a href="https://balanced-nutrition.vercel.app/" class="project-link" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    balanced-nutrition.vercel.app
+                </a>
+                <p class="achievement">Built a diet & nutrition web app that connects certified nutritionists with customers for personalized meal guidance</p>
+                <p class="achievement">Implemented booking, plan management, and communication flows to streamline the nutritionist-client relationship</p>
+                <div class="project-tags">
+                    <span class="project-tag">Healthtech</span>
+                    <span class="project-tag">Marketplace</span>
+                    <span class="project-tag">Next.js</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Bookleaf Publishing — Support Portal</h3>
+                    <span class="project-badge badge-live">Live</span>
+                </div>
+                <p class="project-subtitle">Technical assignment: user query & admin support platform with Gemini-powered auto-replies</p>
+                <a href="https://bookleaf-publishing-technical-assig.vercel.app/login" class="project-link" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    bookleaf-publishing-technical-assig.vercel.app
+                </a>
+                <p class="achievement">Built a platform connecting user queries to an admin panel for review and response</p>
+                <p class="achievement">Integrated Google Gemini to generate automated, context-aware replies to incoming user queries, reducing admin response time</p>
+                <p class="achievement">Implemented authentication and a structured admin dashboard for managing and resolving queries</p>
+                <div class="project-tags">
+                    <span class="project-tag">Gemini API</span>
+                    <span class="project-tag">Admin Dashboard</span>
+                    <span class="project-tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Realtime Chat Application</h3>
+                    <span class="project-badge badge-personal">Personal Project</span>
+                </div>
                 <p class="project-subtitle">Modern web application for seamless real-time communication</p>
-                <p class="achievement">Developed using Next.js frontend and Nest.js backend with WebSocket integration</p>
+                <p class="achievement">Developed using a Next.js frontend and Nest.js backend with WebSocket integration</p>
                 <p class="achievement">Implemented JWT authentication and MongoDB for secure data persistence</p>
-                <p class="achievement">Supports both group and individual chat capabilities with real-time messaging</p>
+                <p class="achievement">Supports both group and individual chat with real-time messaging</p>
+                <div class="project-tags">
+                    <span class="project-tag">WebSockets</span>
+                    <span class="project-tag">Nest.js</span>
+                    <span class="project-tag">MongoDB</span>
+                </div>
             </div>
         </section>
 
@@ -598,7 +783,7 @@
             <div class="education-item">
                 <div class="degree">Bachelor of Technology in Computer Science and Engineering</div>
                 <div class="institution">Giani Zail Singh Campus College of Engineering and Technology, Bathinda</div>
-                <div class="education-details">2020-2024 | CGPA: 7.2</div>
+                <div class="education-details">2020 – 2024 | CGPA: 7.2</div>
             </div>
         </section>
 
@@ -606,7 +791,7 @@
         <section class="cta-section">
             <h2 class="cta-title">Let's Work Together</h2>
             <p class="cta-description">
-                I'm passionate about creating innovative AI solutions and building scalable software. 
+                I'm passionate about creating innovative AI solutions and building scalable software.
                 Let's connect and explore how we can collaborate on your next project.
             </p>
             <div class="cta-buttons">
@@ -641,7 +826,7 @@
         const heroTitle = document.querySelector('.hero-title');
         const titleText = heroTitle.textContent;
         heroTitle.textContent = '';
-        
+
         let i = 0;
         function typeWriter() {
             if (i < titleText.length) {
@@ -650,8 +835,7 @@
                 setTimeout(typeWriter, 100);
             }
         }
-        
-        // Start typing animation after a short delay
+
         setTimeout(typeWriter, 500);
 
         // Add intersection observer for animations
@@ -669,7 +853,6 @@
             });
         }, observerOptions);
 
-        // Observe all sections
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(30px)';
